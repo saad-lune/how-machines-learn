@@ -1,0 +1,111 @@
+{
+  "scope": "Opening scene only",
+  "total_seconds": 720,
+  "slides": [
+    {
+      "slide": 1,
+      "title": "How Machines Learn",
+      "start": 0,
+      "end": 30,
+      "seconds": 30
+    },
+    {
+      "slide": 2,
+      "title": "An order arrives",
+      "start": 30,
+      "end": 65,
+      "seconds": 35
+    },
+    {
+      "slide": 3,
+      "title": "Preparation takes time",
+      "start": 65,
+      "end": 95,
+      "seconds": 30
+    },
+    {
+      "slide": 4,
+      "title": "Travel takes time",
+      "start": 95,
+      "end": 135,
+      "seconds": 40
+    },
+    {
+      "slide": 5,
+      "title": "Our first prediction",
+      "start": 135,
+      "end": 180,
+      "seconds": 45
+    },
+    {
+      "slide": 6,
+      "title": "The delivery finishes",
+      "start": 180,
+      "end": 220,
+      "seconds": 40
+    },
+    {
+      "slide": 7,
+      "title": "Feedback from several deliveries",
+      "start": 220,
+      "end": 280,
+      "seconds": 60
+    },
+    {
+      "slide": 8,
+      "title": "Our observations on a graph",
+      "start": 280,
+      "end": 325,
+      "seconds": 45
+    },
+    {
+      "slide": 9,
+      "title": "Our model makes a line",
+      "start": 325,
+      "end": 375,
+      "seconds": 50
+    },
+    {
+      "slide": 10,
+      "title": "Measuring the mismatch",
+      "start": 375,
+      "end": 435,
+      "seconds": 60
+    },
+    {
+      "slide": 11,
+      "title": "Tuning our two parameters",
+      "start": 435,
+      "end": 555,
+      "seconds": 120
+    },
+    {
+      "slide": 12,
+      "title": "A better fit",
+      "start": 555,
+      "end": 600,
+      "seconds": 45
+    },
+    {
+      "slide": 13,
+      "title": "Who chooses the adjustments?",
+      "start": 600,
+      "end": 630,
+      "seconds": 30
+    },
+    {
+      "slide": 14,
+      "title": "Learning from a stream of deliveries",
+      "start": 630,
+      "end": 690,
+      "seconds": 60
+    },
+    {
+      "slide": 15,
+      "title": "Predicting numbers or categories",
+      "start": 690,
+      "end": 720,
+      "seconds": 30
+    }
+  ]
+}

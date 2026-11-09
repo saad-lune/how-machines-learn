@@ -1,0 +1,563 @@
+{
+  "torch_version": "2.15.0",
+  "seed": 20261111,
+  "dtype": "float64",
+  "device": "cpu",
+  "model": "nn.Linear(1,1)",
+  "loss": "nn.MSELoss(reduction=\"mean\")",
+  "learning_rate": 0.008,
+  "check_deliveries": 2048,
+  "check_sample_used_for_training": false,
+  "initial": {
+    "deliveries": 0,
+    "updates": 0,
+    "preparation": 3.0,
+    "minutes_per_km": 2.0,
+    "check_mse": 61.19694619949816,
+    "running": false,
+    "limit": 100000
+  },
+  "final": {
+    "deliveries": 100000,
+    "updates": 1619,
+    "preparation": 4.987615319271753,
+    "minutes_per_km": 3.0048745274533926,
+    "check_mse": 0.8216520436221494,
+    "running": false,
+    "limit": 100000
+  },
+  "history": [
+    {
+      "deliveries": 0,
+      "updates": 0,
+      "preparation": 3.0,
+      "minutes_per_km": 2.0,
+      "check_mse": 61.19694619949816
+    },
+    {
+      "deliveries": 1,
+      "updates": 1,
+      "preparation": 3.1679049110177564,
+      "minutes_per_km": 3.4901354976584296,
+      "check_mse": 3.139218513142363
+    },
+    {
+      "deliveries": 2,
+      "updates": 2,
+      "preparation": 3.154918564488188,
+      "minutes_per_km": 3.441392965763297,
+      "check_mse": 2.4809335291902297
+    },
+    {
+      "deliveries": 3,
+      "updates": 3,
+      "preparation": 3.144084624789386,
+      "minutes_per_km": 3.3691307727489748,
+      "check_mse": 1.838187142704153
+    },
+    {
+      "deliveries": 4,
+      "updates": 4,
+      "preparation": 3.1409481072665457,
+      "minutes_per_km": 3.35053087058532,
+      "check_mse": 1.7347972495362336
+    },
+    {
+      "deliveries": 5,
+      "updates": 5,
+      "preparation": 3.12993612189571,
+      "minutes_per_km": 3.2790708294996245,
+      "check_mse": 1.5742196076913184
+    },
+    {
+      "deliveries": 6,
+      "updates": 6,
+      "preparation": 3.147802411365748,
+      "minutes_per_km": 3.3066469170635426,
+      "check_mse": 1.5845885071205659
+    },
+    {
+      "deliveries": 7,
+      "updates": 7,
+      "preparation": 3.1442878456141123,
+      "minutes_per_km": 3.2809459715486433,
+      "check_mse": 1.5623702496633343
+    },
+    {
+      "deliveries": 8,
+      "updates": 8,
+      "preparation": 3.1508278262675056,
+      "minutes_per_km": 3.34001856954953,
+      "check_mse": 1.6857432187714267
+    },
+    {
+      "deliveries": 9,
+      "updates": 9,
+      "preparation": 3.1958427538703162,
+      "minutes_per_km": 3.4087241588321238,
+      "check_mse": 2.1710355437140856
+    },
+    {
+      "deliveries": 10,
+      "updates": 10,
+      "preparation": 3.1663835131515827,
+      "minutes_per_km": 3.1649767051284807,
+      "check_mse": 1.9868276048406674
+    },
+    {
+      "deliveries": 11,
+      "updates": 11,
+      "preparation": 3.1891040517368214,
+      "minutes_per_km": 3.352284512924459,
+      "check_mse": 1.7436987210367427
+    },
+    {
+      "deliveries": 12,
+      "updates": 12,
+      "preparation": 3.207205109565722,
+      "minutes_per_km": 3.3861312135587562,
+      "check_mse": 1.978219521262383
+    },
+    {
+      "deliveries": 24,
+      "updates": 13,
+      "preparation": 3.2039913911228077,
+      "minutes_per_km": 3.3030866729061072,
+      "check_mse": 1.5507703020354473
+    },
+    {
+      "deliveries": 36,
+      "updates": 14,
+      "preparation": 3.1960471145210567,
+      "minutes_per_km": 3.210633524331801,
+      "check_mse": 1.6572719229813115
+    },
+    {
+      "deliveries": 48,
+      "updates": 15,
+      "preparation": 3.219043552722274,
+      "minutes_per_km": 3.277689276109235,
+      "check_mse": 1.5068154374028044
+    },
+    {
+      "deliveries": 60,
+      "updates": 16,
+      "preparation": 3.224144610373841,
+      "minutes_per_km": 3.2944566028156714,
+      "check_mse": 1.5240812096451537
+    },
+    {
+      "deliveries": 72,
+      "updates": 17,
+      "preparation": 3.231456260780537,
+      "minutes_per_km": 3.2970163723754036,
+      "check_mse": 1.525674656289707
+    },
+    {
+      "deliveries": 84,
+      "updates": 18,
+      "preparation": 3.22975707272721,
+      "minutes_per_km": 3.228410354987575,
+      "check_mse": 1.55032842665744
+    },
+    {
+      "deliveries": 96,
+      "updates": 19,
+      "preparation": 3.2388759252740122,
+      "minutes_per_km": 3.2291005934481003,
+      "check_mse": 1.5379320552077125
+    },
+    {
+      "deliveries": 108,
+      "updates": 20,
+      "preparation": 3.248888451010621,
+      "minutes_per_km": 3.264238229685994,
+      "check_mse": 1.4818383324549094
+    },
+    {
+      "deliveries": 120,
+      "updates": 21,
+      "preparation": 3.2514375912943074,
+      "minutes_per_km": 3.250717560718366,
+      "check_mse": 1.4865184801464164
+    },
+    {
+      "deliveries": 240,
+      "updates": 23,
+      "preparation": 3.2624574289979518,
+      "minutes_per_km": 3.249934136340123,
+      "check_mse": 1.4775066590534136
+    },
+    {
+      "deliveries": 360,
+      "updates": 25,
+      "preparation": 3.2752113171349158,
+      "minutes_per_km": 3.255897484470537,
+      "check_mse": 1.4631551830791765
+    },
+    {
+      "deliveries": 480,
+      "updates": 27,
+      "preparation": 3.2876980370887474,
+      "minutes_per_km": 3.2671891916519877,
+      "check_mse": 1.4554830204170859
+    },
+    {
+      "deliveries": 600,
+      "updates": 29,
+      "preparation": 3.2925443964805043,
+      "minutes_per_km": 3.2438356596500544,
+      "check_mse": 1.4568941919476672
+    },
+    {
+      "deliveries": 720,
+      "updates": 31,
+      "preparation": 3.3041989839817862,
+      "minutes_per_km": 3.239636098926935,
+      "check_mse": 1.4511195084265955
+    },
+    {
+      "deliveries": 840,
+      "updates": 33,
+      "preparation": 3.3179108550048055,
+      "minutes_per_km": 3.259351045085861,
+      "check_mse": 1.4320593629132614
+    },
+    {
+      "deliveries": 960,
+      "updates": 35,
+      "preparation": 3.3273735079356737,
+      "minutes_per_km": 3.2541674370030624,
+      "check_mse": 1.42448465989014
+    },
+    {
+      "deliveries": 1080,
+      "updates": 37,
+      "preparation": 3.3369029581905805,
+      "minutes_per_km": 3.232426524839379,
+      "check_mse": 1.4305796183382433
+    },
+    {
+      "deliveries": 1200,
+      "updates": 39,
+      "preparation": 3.3473541138362837,
+      "minutes_per_km": 3.2423355533760945,
+      "check_mse": 1.412337934804152
+    },
+    {
+      "deliveries": 2200,
+      "updates": 55,
+      "preparation": 3.436155921492775,
+      "minutes_per_km": 3.2629908893428654,
+      "check_mse": 1.3733951449726067
+    },
+    {
+      "deliveries": 3200,
+      "updates": 71,
+      "preparation": 3.51664819344598,
+      "minutes_per_km": 3.235575264853407,
+      "check_mse": 1.3009416775184737
+    },
+    {
+      "deliveries": 4200,
+      "updates": 87,
+      "preparation": 3.5921404445358793,
+      "minutes_per_km": 3.193797344417355,
+      "check_mse": 1.2635359919981584
+    },
+    {
+      "deliveries": 5200,
+      "updates": 103,
+      "preparation": 3.6677679549977484,
+      "minutes_per_km": 3.2142991287828075,
+      "check_mse": 1.211016610864991
+    },
+    {
+      "deliveries": 6200,
+      "updates": 119,
+      "preparation": 3.738560511710218,
+      "minutes_per_km": 3.2189354355369804,
+      "check_mse": 1.1929780524688423
+    },
+    {
+      "deliveries": 7200,
+      "updates": 135,
+      "preparation": 3.798634002361107,
+      "minutes_per_km": 3.1848157294706216,
+      "check_mse": 1.13491355529179
+    },
+    {
+      "deliveries": 8200,
+      "updates": 151,
+      "preparation": 3.8664467884286506,
+      "minutes_per_km": 3.1923951949088742,
+      "check_mse": 1.1149885428700355
+    },
+    {
+      "deliveries": 9200,
+      "updates": 167,
+      "preparation": 3.9227445410962543,
+      "minutes_per_km": 3.156364556156477,
+      "check_mse": 1.0760083420048918
+    },
+    {
+      "deliveries": 10200,
+      "updates": 183,
+      "preparation": 3.9775531906150454,
+      "minutes_per_km": 3.1474228452294786,
+      "check_mse": 1.051696768825806
+    },
+    {
+      "deliveries": 12700,
+      "updates": 223,
+      "preparation": 4.0963079433621985,
+      "minutes_per_km": 3.0895394316433684,
+      "check_mse": 1.0819767015468122
+    },
+    {
+      "deliveries": 15200,
+      "updates": 263,
+      "preparation": 4.208736519452968,
+      "minutes_per_km": 3.1038434842605644,
+      "check_mse": 0.9693997811385124
+    },
+    {
+      "deliveries": 17700,
+      "updates": 303,
+      "preparation": 4.320079158220526,
+      "minutes_per_km": 3.110086426218067,
+      "check_mse": 0.9249009583354459
+    },
+    {
+      "deliveries": 20200,
+      "updates": 343,
+      "preparation": 4.400460218284646,
+      "minutes_per_km": 3.115387332117707,
+      "check_mse": 0.920246834896105
+    },
+    {
+      "deliveries": 22700,
+      "updates": 383,
+      "preparation": 4.483235437859338,
+      "minutes_per_km": 3.1251745372243525,
+      "check_mse": 0.9535117759263019
+    },
+    {
+      "deliveries": 25200,
+      "updates": 423,
+      "preparation": 4.541722884805528,
+      "minutes_per_km": 3.080702503928999,
+      "check_mse": 0.8721601295339375
+    },
+    {
+      "deliveries": 27700,
+      "updates": 463,
+      "preparation": 4.599561682488229,
+      "minutes_per_km": 3.0718648897629253,
+      "check_mse": 0.8611636584765301
+    },
+    {
+      "deliveries": 30200,
+      "updates": 503,
+      "preparation": 4.647935038049279,
+      "minutes_per_km": 3.0072005009258858,
+      "check_mse": 0.9307200494102774
+    },
+    {
+      "deliveries": 32700,
+      "updates": 543,
+      "preparation": 4.6927041792593815,
+      "minutes_per_km": 3.032854177698597,
+      "check_mse": 0.8520027983876749
+    },
+    {
+      "deliveries": 35200,
+      "updates": 583,
+      "preparation": 4.73555252582617,
+      "minutes_per_km": 3.0420592530058683,
+      "check_mse": 0.8380133894074355
+    },
+    {
+      "deliveries": 37700,
+      "updates": 623,
+      "preparation": 4.77573370634814,
+      "minutes_per_km": 3.066713569095275,
+      "check_mse": 0.8667121146982758
+    },
+    {
+      "deliveries": 40200,
+      "updates": 663,
+      "preparation": 4.796378816619043,
+      "minutes_per_km": 3.031743451936458,
+      "check_mse": 0.831646757891499
+    },
+    {
+      "deliveries": 42700,
+      "updates": 703,
+      "preparation": 4.824730909687232,
+      "minutes_per_km": 3.0343004350701275,
+      "check_mse": 0.8302622469295938
+    },
+    {
+      "deliveries": 45200,
+      "updates": 743,
+      "preparation": 4.845278490729665,
+      "minutes_per_km": 3.0418166175908796,
+      "check_mse": 0.8368337760711262
+    },
+    {
+      "deliveries": 47700,
+      "updates": 783,
+      "preparation": 4.858273690037075,
+      "minutes_per_km": 3.016643879366465,
+      "check_mse": 0.8283945522043992
+    },
+    {
+      "deliveries": 50200,
+      "updates": 823,
+      "preparation": 4.888245280040488,
+      "minutes_per_km": 3.0335582151502054,
+      "check_mse": 0.832178657503665
+    },
+    {
+      "deliveries": 52700,
+      "updates": 863,
+      "preparation": 4.91708352782834,
+      "minutes_per_km": 3.0359502894383814,
+      "check_mse": 0.8391847001840691
+    },
+    {
+      "deliveries": 55200,
+      "updates": 903,
+      "preparation": 4.917477599875033,
+      "minutes_per_km": 3.0039261003539184,
+      "check_mse": 0.8276132783419422
+    },
+    {
+      "deliveries": 57700,
+      "updates": 943,
+      "preparation": 4.918824632288695,
+      "minutes_per_km": 2.9585883251948983,
+      "check_mse": 0.9334001732560796
+    },
+    {
+      "deliveries": 60200,
+      "updates": 983,
+      "preparation": 4.919772182712841,
+      "minutes_per_km": 2.988685968275799,
+      "check_mse": 0.8466385760910402
+    },
+    {
+      "deliveries": 62700,
+      "updates": 1023,
+      "preparation": 4.93950967481457,
+      "minutes_per_km": 3.0287571554417587,
+      "check_mse": 0.8331912119871988
+    },
+    {
+      "deliveries": 65200,
+      "updates": 1063,
+      "preparation": 4.95073039489411,
+      "minutes_per_km": 3.0374685298644146,
+      "check_mse": 0.849272744460768
+    },
+    {
+      "deliveries": 67700,
+      "updates": 1103,
+      "preparation": 4.961808197282165,
+      "minutes_per_km": 3.0437969679026122,
+      "check_mse": 0.8667680522186991
+    },
+    {
+      "deliveries": 70200,
+      "updates": 1143,
+      "preparation": 4.956868249743467,
+      "minutes_per_km": 3.0063718352538484,
+      "check_mse": 0.8224119040349624
+    },
+    {
+      "deliveries": 72700,
+      "updates": 1183,
+      "preparation": 4.972449490026158,
+      "minutes_per_km": 3.0464571206726645,
+      "check_mse": 0.8778459542085759
+    },
+    {
+      "deliveries": 75200,
+      "updates": 1223,
+      "preparation": 4.962667657626547,
+      "minutes_per_km": 2.9776347815207607,
+      "check_mse": 0.8543994392852048
+    },
+    {
+      "deliveries": 77700,
+      "updates": 1263,
+      "preparation": 4.9838088971767975,
+      "minutes_per_km": 3.0692207269016842,
+      "check_mse": 0.9672748142373359
+    },
+    {
+      "deliveries": 80200,
+      "updates": 1303,
+      "preparation": 4.978231688023539,
+      "minutes_per_km": 2.970872219275602,
+      "check_mse": 0.864235160605463
+    },
+    {
+      "deliveries": 82700,
+      "updates": 1343,
+      "preparation": 4.983745011671293,
+      "minutes_per_km": 2.973208825915702,
+      "check_mse": 0.8567834216710406
+    },
+    {
+      "deliveries": 85200,
+      "updates": 1383,
+      "preparation": 4.973471587755562,
+      "minutes_per_km": 3.001583475881734,
+      "check_mse": 0.8226485034725248
+    },
+    {
+      "deliveries": 87700,
+      "updates": 1423,
+      "preparation": 4.989452029890147,
+      "minutes_per_km": 3.0476176777340855,
+      "check_mse": 0.8884809087427401
+    },
+    {
+      "deliveries": 90200,
+      "updates": 1463,
+      "preparation": 4.987006004614795,
+      "minutes_per_km": 3.005941323679885,
+      "check_mse": 0.8217354290652825
+    },
+    {
+      "deliveries": 92700,
+      "updates": 1503,
+      "preparation": 4.973476128858608,
+      "minutes_per_km": 2.964066357121902,
+      "check_mse": 0.884658188123466
+    },
+    {
+      "deliveries": 95200,
+      "updates": 1543,
+      "preparation": 4.983038896089053,
+      "minutes_per_km": 2.9817371896876694,
+      "check_mse": 0.8405857306570866
+    },
+    {
+      "deliveries": 97700,
+      "updates": 1583,
+      "preparation": 5.000090826400003,
+      "minutes_per_km": 3.0659634983733537,
+      "check_mse": 0.9634440550356954
+    },
+    {
+      "deliveries": 100000,
+      "updates": 1619,
+      "preparation": 4.987615319271753,
+      "minutes_per_km": 3.0048745274533926,
+      "check_mse": 0.8216520436221494
+    }
+  ]
+}

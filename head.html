@@ -1,0 +1,10 @@
+<meta name="color-scheme" content="light">
+<script>
+// Reveal listens on document. Let widgets handle their own keys first, then
+// keep those key events from also advancing the presentation.
+document.addEventListener("keydown", function (event) {
+  if (event.composedPath().some(function (node) {
+    return node.tagName === "MARIMO-UI-ELEMENT";
+  })) event.stopImmediatePropagation();
+});
+</script>

@@ -1,0 +1,6 @@
+Actual CPU PyTorch 2.15.0; deterministic seed 20261111
+Synthetic restaurant: mean=5+3*distance, noise standard deviation=0.9 min
+Initial: preparation=3.000000, rate=2.000000, check MSE=61.196946
+Final: 100,000 deliveries, 1,619 real SGD updates
+Preparation=4.987615 min, rate=3.004875 min/km
+Final fixed check-sample MSE=0.821652 min^2

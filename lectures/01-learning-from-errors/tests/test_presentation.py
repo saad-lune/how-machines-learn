@@ -81,21 +81,31 @@ def test_plot_renders_all_arrived_points_and_actual_model():
     assert fig.data[1].y==pytest.approx([state['preparation'],state['preparation']+10.5*state['minutes_per_km']])
 
 
-def test_only_agreed_opening_slides_and_number_only_footer():
+def test_teaching_order_and_number_only_footer():
     timeline=json.loads((ROOT/'timing.json').read_text())
     slides=timeline['slides']
-    assert len(slides)==15 and slides[-1]['slide']==15
+    assert [s['slide'] for s in slides] == list(range(1, 23))
     assert slides[-1]['title']=='Predicting numbers or categories'
     assert [s['title'] for s in slides[7:10]] == ['Our observations on a graph','Our model makes a line','Measuring the mismatch']
+    assert [s['title'] for s in slides[12:20]] == [
+        'Who chooses the adjustments?',
+        'How can the model choose a better guess?',
+        'A loss function for any guess',
+        'How does loss change with travel rate?',
+        'What does a derivative measure?',
+        'One step toward lower loss',
+        'What happens if we keep going?',
+        'What if we change preparation time?',
+    ]
     assert slides[-2]['title']=='Learning from a stream of deliveries'
-    assert sum(s['seconds'] for s in slides)==timeline['total_seconds']==720
+    assert sum(s['seconds'] for s in slides)==timeline['total_seconds']==1260
     assert all(a['end']==b['start'] for a,b in zip(slides,slides[1:]))
     source=(ROOT/'presentation.py').read_text()
     layout=json.loads((ROOT/'layouts/presentation.slides.json').read_text())
     assert layout['type']=='slides'
     assert len(layout['data']['cells'])==source.count('@app.cell')
     notes=[row['speakerNotes'] for row in layout['data']['cells'] if row['type']=='slide']
-    assert len(notes)==15 and all('SAY' in n and 'FALLBACK' in n for n in notes)
+    assert len(notes)==22 and all('SAY' in n and 'FALLBACK' in n for n in notes)
     assert 'backward()' not in source and 'nn.Sequential' not in source
     footer=frame(8,'Loss','<p>Example</p>').split('<footer')[1].split('</footer>')[0]
     assert footer==' class="footer"><span>8</span>'

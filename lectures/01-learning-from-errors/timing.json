@@ -1,6 +1,6 @@
 {
-  "scope": "Opening scene only",
-  "total_seconds": 720,
+  "scope": "Lecture 01",
+  "total_seconds": 1260,
   "slides": [
     {
       "slide": 1,
@@ -95,16 +95,65 @@
     },
     {
       "slide": 14,
-      "title": "Learning from a stream of deliveries",
+      "title": "How can the model choose a better guess?",
       "start": 630,
       "end": 690,
       "seconds": 60
     },
     {
       "slide": 15,
-      "title": "Predicting numbers or categories",
+      "title": "A loss function for any guess",
       "start": 690,
-      "end": 720,
+      "end": 765,
+      "seconds": 75
+    },
+    {
+      "slide": 16,
+      "title": "How does loss change with travel rate?",
+      "start": 765,
+      "end": 840,
+      "seconds": 75
+    },
+    {
+      "slide": 17,
+      "title": "What does a derivative measure?",
+      "start": 840,
+      "end": 930,
+      "seconds": 90
+    },
+    {
+      "slide": 18,
+      "title": "One step toward lower loss",
+      "start": 930,
+      "end": 1005,
+      "seconds": 75
+    },
+    {
+      "slide": 19,
+      "title": "What happens if we keep going?",
+      "start": 1005,
+      "end": 1050,
+      "seconds": 45
+    },
+    {
+      "slide": 20,
+      "title": "What if we change preparation time?",
+      "start": 1050,
+      "end": 1170,
+      "seconds": 120
+    },
+    {
+      "slide": 21,
+      "title": "Learning from a stream of deliveries",
+      "start": 1170,
+      "end": 1230,
+      "seconds": 60
+    },
+    {
+      "slide": 22,
+      "title": "Predicting numbers or categories",
+      "start": 1230,
+      "end": 1260,
       "seconds": 30
     }
   ]

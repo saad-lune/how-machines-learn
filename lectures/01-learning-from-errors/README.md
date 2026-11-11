@@ -1,6 +1,6 @@
 # Lecture 01 · Learning from errors
 
-This presentation contains exactly **15 native Marimo slides**, following the agreed delivery-prediction story. The live learning simulation is followed by a final comparison of linear regression and classification. The later mathematical material and code preview have been removed from this presentation.
+This presentation contains **22 native Marimo slides**. It follows the delivery-time model from its first prediction through mean squared error, derivatives, and gradient descent, then demonstrates live training.
 
 ## Launch
 
@@ -8,17 +8,17 @@ Follow the [repository setup instructions](../../README.md#run-locally). The dec
 
 ## Presenter controls
 
-- **Next / Back:** visible corner arrows, Right / Left, or Space / Shift+Space. Next also advances the deliberate reveals on slides 4, 7, 9-10 and 15.
+- **Next / Back:** visible corner arrows, Right / Left, or Space / Shift+Space. Next also advances the reveals on slides 4, 7, 9–10, 14–20, and 22.
 - **Fullscreen:** `F` or the top-right fullscreen icon.
 - **Speaker view:** click the slide, then press `S`. Allow the popup. Full scripts, actions, calculations, time windows, transitions and fallbacks are also in `speaker-notes.md`.
 - **Overview:** `Esc`, then choose a slide.
 - After using a widget, click the slide heading to resume presentation shortcuts. Slider keys operate the slider without also advancing the presentation.
 
-The notes now allocate twelve minutes overall. Allow up to fifteen minutes for audience discussion. This is an opening excerpt, not a complete 60-minute session. Timings are intentionally absent from the audience-facing slides.
+The presenter notes allocate 21 minutes overall. The audience-facing slides show slide numbers.
 
 ## Teaching sequence
 
-Slides 1-7 establish the prediction task, inputs, guesses, and delivery feedback. Slide 6 introduces only the observed time. The three delivery records lead directly to **slide 8's observation graph**, then **slide 9's model line**. **Slide 10** names the visible gaps as prediction errors and introduces loss from that graph, before both parameters are tuned together. The better fit and automatic-adjustment question lead into the live simulation, followed by the final prediction-task comparison.
+Slides 1–10 establish the prediction task, plot the delivery records and model line, and introduce prediction error. Slides 11–13 tune the two parameters by hand and ask how the program could choose the adjustments. Slides 14–20 calculate and plot the loss, use its slope to take a gradient descent step, and compare the two partial derivatives. The live simulation on slide 21 repeats the update as deliveries arrive. Slide 22 closes with regression and classification.
 
 ## Manual parameter tuning
 
@@ -33,18 +33,17 @@ Slides 1-7 establish the prediction task, inputs, guesses, and delivery feedback
 
 ## The live simulation
 
-On **slide 14**, press **Run / Pause**. The simulation generates fresh synthetic deliveries and trains an actual CPU PyTorch linear model. It starts from our original guesses, preparation 3 and rate 2, then grows to **100,000 observations**. Every arrived dot is plotted using WebGL. The model line comes from actual parameter values after SGD updates.
+On **slide 21**, press **Run / Pause**. The simulation generates fresh synthetic deliveries and trains an actual CPU PyTorch linear model. It starts from our original guesses, preparation 3 and rate 2, then grows to **100,000 observations**. Every arrived dot is plotted using WebGL. The model line comes from actual parameter values after SGD updates.
 
 The simulated restaurant's mean time is `5 + 3 * distance`, with random variation of standard deviation 0.9 minutes. Distance ranges from 0.5 to 10 km. The simulation loss is mean squared error on the **same independent 2,048-delivery check sample**, never used for updates. This is a different dataset from slide 11's three teaching records, so compare changes within each readout rather than comparing their absolute values. It is not a moving average over a changing dataset. Noise and stochastic updates can cause fluctuations.
 
 The arrival rate increases automatically, and the stream stops at 100,000. Actual processing uses small incoming batches; screen updates are frames, not 100,000 separate browser elements. There is no replay of recorded coefficients or fabricated line animation.
 
-**Reset simulation** stops playback and resets the model, optimizer, delivery counter, random stream, and loss to the deterministic starting state. A paused run retains state on revisit. Pause before navigating away; if left running, it continues to the cap. After the simulation, slide 15 names linear regression as numerical prediction with our straight-line model and contrasts it with classification using on-time/late categories. Neural networks are left for a later section.
+**Reset simulation** stops playback and resets the model, optimizer, delivery counter, random stream, and loss to the deterministic starting state. A paused run retains state on revisit. Pause before navigating away. A running simulation continues to the cap. Slide 22 compares regression, which predicts a number, with classification, which predicts a category such as on time or late.
 
 ## Fallbacks and checks
 
-- [Offline PDF](fallback.pdf): fully offline, 15 pages, all text reveals visible and a completed simulation snapshot.
-- [Static HTML](fallback.html): native Marimo static slides with speaker notes. Frontend assets load from Marimo's CDN. Controls do not execute Python in this export.
+- [Earlier 15-slide PDF](fallback.pdf) and [static HTML](fallback.html) preserve the original opening and completed simulation. The HTML loads frontend assets from Marimo's CDN.
 - `recorded/simulation.json` and `recorded/demo-output.txt`: reproducible results from the actual simulation.
 
 To recompute the recording and export the static HTML, run these commands from the repository root after setup.

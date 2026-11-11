@@ -1,6 +1,14 @@
-# Opening-scene verification
+# Lecture 01 verification
 
-These checks cover the earlier 15-slide release and its fallback exports. The live Lecture 01 deck now contains 22 slides.
+## Current fallback exports
+
+The static HTML was opened in Chromium and advanced through all 22 slides and 62 reveal states. Slide 21 shows the completed 100,000-delivery simulation. Slide 22 shows regression and classification. The CDN load timed out during verification, so Chromium used the same Marimo 0.25.2 frontend assets from the local installation.
+
+The offline PDF has one page per reveal state and 22 bookmarks, one for each slide. Its pages were rendered for visual review, including the equations, prediction-error tables, and completed simulation.
+
+## Earlier 15-slide release
+
+The checks below describe the original opening deck and its earlier fallback exports.
 
 Verified on 7 November 2026 with Python 3.12.14, Marimo 0.25.2, PyTorch 2.15.0, NumPy 2.5.4, Plotly 7.1.0 and the installed Google Chrome through Playwright.
 

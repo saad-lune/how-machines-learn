@@ -43,7 +43,9 @@ The arrival rate increases automatically, and the stream stops at 100,000. Actua
 
 ## Fallbacks and checks
 
-- [Earlier 15-slide PDF](fallback.pdf) and [static HTML](fallback.html) preserve the original opening and completed simulation. The HTML loads frontend assets from Marimo's CDN.
+- [Offline PDF](fallback.pdf): all 22 slides and their click-by-click reveals across 62 pages. Use the slide bookmarks to jump to a section.
+- [Static HTML](fallback.html): all 22 slides with native reveals and speaker notes. The HTML loads frontend assets from Marimo's CDN.
+- Both exports show the completed simulation at 100,000 deliveries. Use the live deck to run the simulation or change the sliders.
 - `recorded/simulation.json` and `recorded/demo-output.txt`: reproducible results from the actual simulation.
 
 To recompute the recording and export the static HTML, run these commands from the repository root after setup.

@@ -1,4 +1,4 @@
-# How Machines Learn - opening speaker notes
+# How Machines Learn - Lecture 01 speaker notes
 
 SLIDE 1 - 00:00-00:30 - 30 seconds
 
@@ -9,7 +9,7 @@ POINT / ACTION / AUDIENCE
 OPENING: Let the team settle. Keep the cover clean. Say the purpose without introducing gradients, neural networks or implementation details. Speaker notes are available by clicking the slide and pressing S.
 
 CALCULATION / EXPECTED RESULT
-No calculation on this slide. The illustration is abstract decoration. This working presentation contains only the opening scene, slides 1-15. It does not yet represent the complete 60-minute session.
+No calculation on this slide. The illustration is abstract decoration. The lesson builds from delivery predictions to gradient descent and a live training demonstration.
 
 TRANSITION
 Imagine an order arrives at a restaurant. We need to estimate when it will reach the customer.
@@ -18,7 +18,7 @@ FALLBACK
 Use the PDF cover and read this opening. Continue immediately to the delivery situation.
 
 PACING
-Use this window for explanation, audience pauses and reveals. The opening now targets twelve minutes, with room to expand toward fifteen minutes for discussion. Timing stays in presenter notes; the audience footer contains only the slide number.
+Use this window for explanation, audience pauses and reveals. Timing stays in presenter notes; the audience footer contains only the slide number.
 
 ---
 
@@ -40,7 +40,7 @@ FALLBACK
 Read the visible question. Do not add a table or equation yet.
 
 PACING
-Use this window for explanation, audience pauses and reveals. The opening now targets twelve minutes, with room to expand toward fifteen minutes for discussion. Timing stays in presenter notes; the audience footer contains only the slide number.
+Use this window for explanation, audience pauses and reveals. Timing stays in presenter notes; the audience footer contains only the slide number.
 
 ---
 
@@ -62,7 +62,7 @@ FALLBACK
 This screen is static. Say three minutes as our initial guess and move on.
 
 PACING
-Use this window for explanation, audience pauses and reveals. The opening now targets twelve minutes, with room to expand toward fifteen minutes for discussion. Timing stays in presenter notes; the audience footer contains only the slide number.
+Use this window for explanation, audience pauses and reveals. Timing stays in presenter notes; the audience footer contains only the slide number.
 
 ---
 
@@ -84,7 +84,7 @@ FALLBACK
 If the reveal is unavailable, read the calculation in full. No live Python control is needed here.
 
 PACING
-Use this window for explanation, audience pauses and reveals. The opening now targets twelve minutes, with room to expand toward fifteen minutes for discussion. Timing stays in presenter notes; the audience footer contains only the slide number.
+Use this window for explanation, audience pauses and reveals. Timing stays in presenter notes; the audience footer contains only the slide number.
 
 ---
 
@@ -106,7 +106,7 @@ FALLBACK
 Read three plus four equals seven. The visible arithmetic is sufficient if the local server is unavailable.
 
 PACING
-Use this window for explanation, audience pauses and reveals. The opening now targets twelve minutes, with room to expand toward fifteen minutes for discussion. Timing stays in presenter notes; the audience footer contains only the slide number.
+Use this window for explanation, audience pauses and reveals. Timing stays in presenter notes; the audience footer contains only the slide number.
 
 ---
 
@@ -128,7 +128,7 @@ FALLBACK
 Read the static eleven-minute observation. The graph later supplies the visual comparison.
 
 PACING
-Use this window for explanation, audience pauses and reveals. The opening now targets twelve minutes, with room to expand toward fifteen minutes for discussion. Timing stays in presenter notes; the audience footer contains only the slide number.
+Use this window for explanation, audience pauses and reveals. Timing stays in presenter notes; the audience footer contains only the slide number.
 
 ---
 
@@ -150,7 +150,7 @@ FALLBACK
 Read the three observed pairs and continue directly to the observation plot. No loss definition or task taxonomy belongs between the table and graph.
 
 PACING
-Use this window for explanation, audience pauses and reveals. The opening now targets twelve minutes, with room to expand toward fifteen minutes for discussion. Timing stays in presenter notes; the audience footer contains only the slide number.
+Use this window for explanation, audience pauses and reveals. Timing stays in presenter notes; the audience footer contains only the slide number.
 
 ---
 
@@ -172,7 +172,7 @@ FALLBACK
 Use the static graph directly. If a dot is unclear, read the known distance/time pair without adding another table.
 
 PACING
-Use this window for explanation, audience pauses and reveals. The opening now targets twelve minutes, with room to expand toward fifteen minutes for discussion. Timing stays in presenter notes; the audience footer contains only the slide number.
+Use this window for explanation, audience pauses and reveals. Timing stays in presenter notes; the audience footer contains only the slide number.
 
 ---
 
@@ -194,7 +194,7 @@ FALLBACK
 The static fallback shows the initial prediction line and gaps. Point to the gap at 2 km and carry it into the next screen.
 
 PACING
-Use this window for explanation, audience pauses and reveals. The opening now targets twelve minutes, with room to expand toward fifteen minutes for discussion. Timing stays in presenter notes; the audience footer contains only the slide number.
+Use this window for explanation, audience pauses and reveals. Timing stays in presenter notes; the audience footer contains only the slide number.
 
 ---
 
@@ -216,7 +216,7 @@ FALLBACK
 Read the labelled gap from the PDF, then describe loss as a score for the collection of gaps. The next slider gives the concrete example of reducing that mismatch.
 
 PACING
-Use this window for explanation, audience pauses and reveals. The opening now targets twelve minutes, with room to expand toward fifteen minutes for discussion. Timing stays in presenter notes; the audience footer contains only the slide number.
+Use this window for explanation, audience pauses and reveals. Timing stays in presenter notes; the audience footer contains only the slide number.
 
 ---
 
@@ -241,7 +241,7 @@ FALLBACK
 The PDF shows the initial state of the shared controls. Narrate loss 16.6667 at (3,2), 4.6667 at (5,2), and zero at (5,3). The next static fitted graph supplies the finished result if live controls fail.
 
 PACING
-Use the combined two-minute window for both parameter explanations, audience predictions and demonstrations. The overall opening still targets twelve minutes. Timing remains only in presenter notes; the footer contains only the slide number.
+Use the combined two-minute window for both parameter explanations, audience predictions and demonstrations. Timing remains only in presenter notes; the footer contains only the slide number.
 
 ---
 
@@ -263,39 +263,124 @@ FALLBACK
 This is already a static fitted result. Read the three predictions and their corresponding observations.
 
 PACING
-Use this window for explanation, audience pauses and reveals. The opening now targets twelve minutes, with room to expand toward fifteen minutes for discussion. Timing stays in presenter notes; the audience footer contains only the slide number.
+Use this window for explanation, audience pauses and reveals. Timing stays in presenter notes; the audience footer contains only the slide number.
 
 ---
 
 SLIDE 13 - 10:00-10:30 - 30 seconds
 
 SAY
-I chose those adjustments by hand. But a service might complete thousands of deliveries. We want a training procedure that uses those observations to adjust the parameters systematically. Let us watch that happen.
+We improved the fit by choosing adjustments ourselves. How could the program work out which way to move?
 
 POINT / ACTION / AUDIENCE
-Let the question stand by itself. Pause for three seconds. Do not answer with gradients, derivative notation or code. The next scene demonstrates learning in action. We will name the prediction tasks after watching it.
-
-CALCULATION / EXPECTED RESULT
-There is no new calculation on this screen. The previous manual estimates for the same 2 km order were seven, then nine, then eleven minutes. The simulation will explicitly restart from the original guesses, 3 and 2.
+Pause on the question. The next slide returns to the starting guesses and works out how to score them.
 
 TRANSITION
-Watch a real simulation of observations arriving and a model being trained.
+Let us start with the three errors from our first prediction line and turn them into a loss score.
 
 FALLBACK
-Read the question, then narrate the recorded simulation result if live execution is unavailable. Do not add a technical explanation of updates during the simulation; follow it with the short task comparison.
-
-PACING
-Use this window for explanation, audience pauses and reveals. The opening now targets twelve minutes, with room to expand toward fifteen minutes for discussion. Timing stays in presenter notes; the audience footer contains only the slide number.
+Read the question aloud and use the three recorded delivery times to begin the worked example.
 
 ---
 
 SLIDE 14 - 10:30-11:30 - 60 seconds
 
 SAY
-Earlier, we improved those guesses ourselves. Now the training process is making the adjustments. Each dot represents feedback from a completed delivery. As observations arrive, the model uses them to update the same two parameters we already understand. The line is learning the overall relationship in the data.
+We found a better fit by moving the sliders. How could the model figure out which way to move on its own? Return to the original guesses of 3 minutes and 2 min/km. Reveal the signed errors and show why averaging them can hide misses. Square and average the three errors to get 16.7 min².
+
+TRANSITION
+We have a score for one guess. Let us make a rule that scores any guess.
+
+FALLBACK
+Write the three misses as −3, −4, and −5 minutes. Average their squares.
+
+---
+
+SLIDE 15 - 11:30-12:45 - 75 seconds
+
+SAY
+Start with the prediction formula and the three recorded deliveries. Reveal prediction error as predicted time minus recorded time. Substitute each delivery’s distance and recorded time in the table, leaving p and r as variables. Then substitute 3 minutes of preparation and 2 min/km. Show all three signed errors together. Keep p and r in those same expressions to build the mean squared loss. Set p to 3 before expanding the squares and collecting like terms. At 2 min/km, the loss is still 16.7 min².
+
+TRANSITION
+Now we can plot the score at different travel rates.
+
+FALLBACK
+Work through the three errors as 3 + 2 × distance minus recorded time. Then read the reduced loss formula and substitute a rate of 2.
+
+---
+
+SLIDE 16 - 12:45-14:00 - 75 seconds
+
+SAY
+Follow each guess on both graphs. The recorded dots stay fixed as the prediction line changes. At 5 min/km the two longer-distance predictions overshoot. Reveal the curve and return to the first guess.
+
+TRANSITION
+Which way should the model move from its starting guess to lower loss?
+
+FALLBACK
+Use rates 2, 3, 4, and 5 with losses 16.7, 4.0, 0.7, and 6.7 min².
+
+---
+
+SLIDE 17 - 14:00-15:30 - 90 seconds
+
+SAY
+Start at 2 min/km. Recall the general definition of the derivative. Point to the horizontal change h, the vertical change Δf, and the line between the two points. Its slope is Δf divided by h. The limit gives the slope at the starting point. Then replace f with the delivery loss function, keep preparation fixed at 3 minutes, and evaluate at a travel rate of 2 min/km. Substitute 0.01 for h. Use the zoom to point out the two rates. On the next click, return to the loss equation and differentiate each term with respect to r. On the final click, substitute r = 2 to get 56/3 − 36 = −52/3, then compare the exact slope with the estimate. A negative slope means a small move to the right lowers loss.
+
+TRANSITION
+We know which way to move. How far should we go?
+
+FALLBACK
+Compare the nudge estimate of −17.29 with the exact slope of −52/3.
+
+---
+
+SLIDE 18 - 15:30-16:45 - 75 seconds
+
+SAY
+Start at the same tangent. The learning rate sets how far to step. Subtract the scaled negative slope to move right. Recalculate the loss at the updated rate.
+
+TRANSITION
+What happens if we keep taking these steps?
+
+FALLBACK
+With a learning rate of 0.02, the rate reaches 2.35 min/km and loss drops to 11.2 min².
+
+---
+
+SLIDE 19 - 16:45-17:30 - 45 seconds
+
+SAY
+Repeated updates approach the minimum and shrink as the curve flattens. Reveal the horizontal tangent at 3.86 min/km. This is the minimum with preparation held at 3 minutes.
+
+TRANSITION
+Could changing preparation time lower the loss further?
+
+FALLBACK
+Read the minimum loss of 0.57 min² and explain why a zero slope gives a zero update.
+
+---
+
+SLIDE 20 - 17:30-19:30 - 120 seconds
+
+SAY
+Keep 27/7 min/km fixed because it minimized loss with preparation at 3 minutes. Start with the three deliveries and their errors. Increase preparation to 4 minutes and point out the parallel shift and the one-minute increase in every signed error. Replace the preparation guess with p, square and average the errors, and simplify the loss. Reveal the curve and compare the slopes at 3 and 4 minutes. In training, we calculate both partial derivatives at the same current guess. Together they form the gradient. We use both slopes in one update, then calculate them again at the new guess.
+
+TRANSITION
+We just worked through an update by hand. Now watch the model repeat that update as deliveries come in.
+
+FALLBACK
+Loss rises from about 0.57 to 1.00 min² between the two guesses. At 3 minutes the slope is −4/7. At 4 minutes it is +10/7. Both slopes point toward the minimum around 3.29 minutes.
+
+---
+
+SLIDE 21 - 19:30-20:30 - 60 seconds
+
+SAY
+We just worked through an update by hand. Now watch the model repeat that update as deliveries come in. Each batch provides fresh examples. The model calculates both partial derivatives at its current guess and takes a gradient step. The teal line shows its current predictions. The loss readout scores those predictions on the same fixed check set throughout the run.
 
 POINT / ACTION
-Press Run / Pause once to start. Let the simulation run continuously and finish. The stream grows from individually visible observations to 100,000 dots. There is no pause to dissect an update, no source-code preview, and no mathematical explanation of updates during this scene. After the run, advance to the regression/classification comparison. Run / Pause is available only as an operating control; it is not a teaching prompt to slow down and explain an update.
+Press Run / Pause once to start. Let the simulation run continuously and finish. The stream grows from individually visible observations to 100,000 dots. Point out the overall drop in check loss and connect the moving line to the preparation and travel-rate updates. Then advance to the regression and classification comparison.
 
 STARTING STATE / RESET
 The simulation explicitly restarts from our original guesses: preparation 3 minutes and rate 2 min/km, zero observations, and no parameter updates. Reset simulation stops playback and restores exactly that state and the same random stream. The manual fitted line from slide 12 does not silently become the starting model here. A paused run preserves its state on revisit. Pause before navigating away; a running stream continues to its 100,000 limit.
@@ -311,7 +396,7 @@ Run record_demo.py to recompute this exact deterministic run. The accompanying r
 
 ---
 
-SLIDE 15 - 11:30-12:00 - 30 seconds
+SLIDE 22 - 20:30-21:00 - 30 seconds
 
 SAY
 What we just built is a linear regression model. It predicts a number, delivery time in minutes, and its prediction rule makes a straight line. Regression is the broader task of predicting numerical values. Classification is a different prediction task: it predicts a category, such as on time or late.
@@ -329,4 +414,4 @@ FALLBACK
 Read the two concrete delivery examples from the static slide. This comparison follows the live simulation so the names describe behavior the audience has already understood.
 
 PACING
-Use this window for explanation, audience pauses and reveals. The opening now targets twelve minutes, with room to expand toward fifteen minutes for discussion. Timing stays in presenter notes; the audience footer contains only the slide number.
+Use this window for explanation, audience pauses and reveals. Timing stays in presenter notes; the audience footer contains only the slide number.

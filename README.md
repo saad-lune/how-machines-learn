@@ -6,7 +6,7 @@ An interactive lecture series on how machine learning models make predictions an
 
 | Lecture | Topic |
 | --- | --- |
-| [01 · Learning from errors](lectures/01-learning-from-errors/README.md) | A 12-minute opening that uses delivery times to introduce prediction, loss, and model training. |
+| [01 · Learning from errors](lectures/01-learning-from-errors/README.md) | Delivery predictions, mean squared error, gradient descent, and live model training. |
 
 ## Run locally
 

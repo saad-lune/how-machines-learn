@@ -1,5 +1,7 @@
 # Opening-scene verification
 
+These checks cover the earlier 15-slide release and its fallback exports. The live Lecture 01 deck now contains 22 slides.
+
 Verified on 7 November 2026 with Python 3.12.14, Marimo 0.25.2, PyTorch 2.15.0, NumPy 2.5.4, Plotly 7.1.0 and the installed Google Chrome through Playwright.
 
 ## Scope

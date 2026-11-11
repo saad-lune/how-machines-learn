@@ -15,17 +15,21 @@ def frame(number, title, body):
     <footer class="footer"><span>{number}</span></footer></article>'''
 
 
-def delivery_plot(preparation=None, rate=None, gaps=False, reveal=False, highlight_error=False):
+def delivery_plot(preparation=None, rate=None, gaps=False, reveal=False, highlight_error=False, *, compact=False):
+    horizontal_scale = 0.5 if compact else 1
+
     def point(distance, minutes):
-        return 90 + 220 * distance, 285 - 11.5 * minutes
-    parts = ['<svg class="delivery-plot" viewBox="0 0 1080 350" role="img" aria-label="Distance versus delivery time for three synthetic deliveries">']
+        return (90 + 220 * distance) * horizontal_scale, 285 - 11.5 * minutes
+
+    left, right = 90 * horizontal_scale, 970 * horizontal_scale
+    parts = [f'<svg class="delivery-plot" viewBox="0 0 {1080 * horizontal_scale:g} 350" role="img" aria-label="Distance versus delivery time for three synthetic deliveries">']
     for t in (0,5,10,15,20):
         _,y=point(0,t)
-        parts.append(f'<path d="M90 {y}H970" class="gridline"/><text x="65" y="{y+7}" text-anchor="end" class="axis-text">{t}</text>')
+        parts.append(f'<path d="M{left:g} {y}H{right:g}" class="gridline"/><text x="{left - (13 if compact else 25):g}" y="{y+7}" text-anchor="end" class="axis-text">{t}</text>')
     for d in range(5):
         x,_=point(d,0)
         parts.append(f'<text x="{x}" y="315" text-anchor="middle" class="axis-text">{d}</text>')
-    parts.append('<text x="90" y="24" class="axis-text">Delivery time (min)</text><text x="530" y="345" text-anchor="middle" class="axis-text">Distance (km)</text>')
+    parts.append(f'<text x="{left:g}" y="24" class="axis-text">Delivery time (min)</text><text x="{(left + right) / 2:g}" y="345" text-anchor="middle" class="axis-text">Distance (km)</text>')
     if preparation is not None:
         end_distance = min(4, (20-preparation)/rate) if rate > 0 else 4
         x0,y0=point(0,preparation);x1,y1=point(end_distance,preparation+end_distance*rate)

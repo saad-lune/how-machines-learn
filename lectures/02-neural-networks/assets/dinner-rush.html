@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dinner-rush prediction</title>
+  <style>
+    :root {
+      --paper: #faf8f2;
+      --ink: #183331;
+      --teal: #007f78;
+      --orange: #a94e28;
+      --muted: #61726a;
+      --line: #cedad2;
+    }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 23px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { display: grid; grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr); gap: 30px; align-items: center; padding: 4px 0; }
+    svg { width: 100%; height: auto; display: block; }
+    svg text { fill: var(--muted); font-size: 19px; }
+    svg .axis-title { fill: var(--ink); font-size: 21px; font-weight: 650; }
+    svg .axis { fill: none; stroke: var(--line); stroke-width: 1.5px; }
+    svg polyline { fill: none; stroke-width: 4px; stroke-linecap: round; }
+    svg .starts, svg .wait { stroke: var(--teal); }
+    svg .clears { stroke: var(--orange); stroke-dasharray: 8 5; }
+    svg .cursor { fill: none; stroke: var(--muted); stroke-width: 1.5px; stroke-dasharray: 4 5; }
+    svg .gap { fill: none; stroke: var(--ink); stroke-width: 3px; stroke-linecap: round; }
+    svg circle { fill: var(--teal); stroke: var(--paper); stroke-width: 2px; }
+    #clears-dot { fill: var(--orange); }
+    .time-line { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-weight: 620; }
+    #clock, dd, .prediction output { font-variant-numeric: tabular-nums; }
+    #clock { color: var(--teal); }
+    input[type="range"] { box-sizing: border-box; width: 100%; margin: 8px 0 0; accent-color: var(--teal); }
+    dl { margin: 16px 0 0; }
+    dl div { display: flex; justify-content: space-between; gap: 10px; padding: 6px 0; }
+    dt, dd { margin: 0; }
+    dd { font-weight: 620; white-space: nowrap; }
+    .a-key, .b-key { display: inline-block; width: 20px; margin-right: 8px; vertical-align: middle; border-top: 3px solid var(--teal); }
+    .b-key { border-color: var(--orange); border-top-style: dashed; }
+    .gap-readout { margin-top: 5px; border-top: 1px solid var(--line); }
+    .prediction { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; border-top: 1px solid var(--line); margin: 12px 0 0; padding-top: 8px; font-weight: 620; }
+    .prediction output { color: var(--teal); font-size: 34px; white-space: nowrap; }
+    .scale { color: var(--muted); margin: 2px 0 0; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <main id="dinner-rush" data-start="$starts_at" data-clear="$clears_at" data-scale="$minutes_per_unit">
+    <svg viewBox="0 0 676 410" role="img"
+         aria-label="Two tanh responses above the predicted wait curve. The same time marker shows the gap between the responses and the corresponding wait.">
+      <text class="axis-title" x="58" y="25">Tanh outputs (−1 means no, +1 means yes)</text>
+      <text x="58" y="54" text-anchor="end" dx="-9">+1</text>
+      <text x="58" y="119" text-anchor="end" dx="-9">0</text>
+      <text x="58" y="184" text-anchor="end" dx="-9">−1</text>
+      <path class="axis" d="M58 48 H642 M58 113 H642 M58 178 H642"/>
+      <text class="axis-title" x="58" y="217">Predicted extra wait (minutes)</text>
+      <text id="wait-top-tick" x="49" y="243" text-anchor="end"></text>
+      <text id="wait-mid-tick" x="49" y="305.5" text-anchor="end"></text>
+      <text x="49" y="368" text-anchor="end">0</text>
+      <path class="axis" d="M58 237 H642 M58 299.5 H642 M58 362 H642"/>
+      <path id="cursor" class="cursor"/>
+      <polyline id="starts-curve" class="starts"/>
+      <polyline id="clears-curve" class="clears"/>
+      <polyline id="wait-curve" class="wait"/>
+      <path id="gap-mark" class="gap"/>
+      <circle id="starts-dot" r="6"/>
+      <circle id="clears-dot" r="6"/>
+      <circle id="wait-dot" r="7"/>
+      <text x="116.4" y="394" text-anchor="middle">5 PM</text>
+      <text x="233.2" y="394" text-anchor="middle">6 PM</text>
+      <text x="350" y="394" text-anchor="middle">7 PM</text>
+      <text x="466.8" y="394" text-anchor="middle">8 PM</text>
+      <text x="583.6" y="394" text-anchor="middle">9 PM</text>
+    </svg>
+    <aside>
+      <div class="time-line">
+        <label for="hour">Time of day</label>
+        <output id="clock" for="hour"></output>
+      </div>
+      <input type="range" id="hour" min="16.5" max="21.5" step="0.25" value="19">
+      <dl>
+        <div><dt><span class="a-key" aria-hidden="true"></span>A · Rush started</dt><dd id="starts-value"></dd></div>
+        <div><dt><span class="b-key" aria-hidden="true"></span>B · Queue clearing</dt><dd id="clears-value"></dd></div>
+        <div class="gap-readout"><dt>Gap (A − B)</dt><dd id="gap-value"></dd></div>
+      </dl>
+      <p class="scale">× $minutes_per_unit minutes per unit of gap</p>
+      <p class="prediction"><span>Extra wait</span><output id="wait-value" for="hour"></output></p>
+    </aside>
+  </main>
+  <script>
+    const root = document.getElementById("dinner-rush");
+    const hourInput = document.getElementById("hour");
+    const startHour = Number(root.dataset.start);
+    const clearHour = Number(root.dataset.clear);
+    const minutesPerUnit = Number(root.dataset.scale);
+    const minHour = Number(hourInput.min);
+    const maxHour = Number(hourInput.max);
+
+    function predict(hour) {
+      const starts = Math.tanh(1.5 * (hour - startHour));
+      const clears = Math.tanh(1.5 * (hour - clearHour));
+      const gap = starts - clears;
+      return { starts, clears, gap, minutes: minutesPerUnit * gap };
+    }
+
+    const x = hour => 58 + (hour - minHour) / (maxHour - minHour) * 584;
+    const responseY = value => 113 - 65 * value;
+    const minutesY = value => 362 - 125 * value / (2 * minutesPerUnit);
+    const sampleHours = Array.from({ length: 101 }, (_, i) => minHour + (maxHour - minHour) * i / 100);
+
+    function drawCurve(id, key, positionY) {
+      const points = sampleHours.map(hour =>
+        x(hour).toFixed(2) + "," + positionY(predict(hour)[key]).toFixed(2)
+      );
+      document.getElementById(id).setAttribute("points", points.join(" "));
+    }
+
+    function mark(id, cx, cy) {
+      const dot = document.getElementById(id);
+      dot.setAttribute("cx", cx);
+      dot.setAttribute("cy", cy);
+    }
+
+    function signed(value) {
+      if (value === 0) return "0.000";
+      return (value < 0 ? "−" : "+") + Math.abs(value).toFixed(3);
+    }
+
+    function showHour() {
+      const hour = Number(hourInput.value);
+      const prediction = predict(hour);
+      const clock = (Math.floor(hour) - 12) + ":" + String(Math.round(hour % 1 * 60)).padStart(2, "0") + " PM";
+      document.getElementById("clock").value = clock;
+      hourInput.setAttribute("aria-valuetext", clock);
+      document.getElementById("starts-value").textContent = signed(prediction.starts);
+      document.getElementById("clears-value").textContent = signed(prediction.clears);
+      document.getElementById("gap-value").textContent = "≈ " + prediction.gap.toFixed(2);
+      document.getElementById("wait-value").value = prediction.minutes.toFixed(1) + " min";
+
+      const timeX = x(hour);
+      const aY = responseY(prediction.starts);
+      const bY = responseY(prediction.clears);
+      document.getElementById("cursor").setAttribute("d", "M" + timeX + " 48 V178 M" + timeX + " 237 V362");
+      const bracketX = timeX + 13;
+      document.getElementById("gap-mark").setAttribute(
+        "d", "M" + (bracketX + 5) + " " + aY + " h-5 V" + bY + " h5"
+      );
+      mark("starts-dot", timeX, aY);
+      mark("clears-dot", timeX, bY);
+      mark("wait-dot", timeX, minutesY(prediction.minutes));
+    }
+
+    document.getElementById("wait-top-tick").textContent = 2 * minutesPerUnit;
+    document.getElementById("wait-mid-tick").textContent = minutesPerUnit;
+    drawCurve("starts-curve", "starts", responseY);
+    drawCurve("clears-curve", "clears", responseY);
+    drawCurve("wait-curve", "minutes", minutesY);
+    hourInput.addEventListener("input", showHour);
+    showHour();
+  </script>
+</body>
+</html>

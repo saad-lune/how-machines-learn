@@ -1,12 +1,13 @@
 # How Machines Learn
 
-An interactive lecture series on how machine learning models make predictions and improve with data. Each lecture is a standalone Marimo deck.
+An interactive lecture series in Marimo on how machine learning models make predictions and improve with data.
 
 ## Lectures
 
 | Lecture | Topic |
 | --- | --- |
 | [01 · Learning from errors](lectures/01-learning-from-errors/README.md) | Delivery predictions, mean squared error, gradient descent, and live model training. |
+| [02 · Neural networks](lectures/02-neural-networks/README.md) | From a biological neuron to a mathematical neuron, backpropagation, and live MLP training. |
 
 ## Run locally
 
@@ -18,7 +19,7 @@ python3.12 -m venv .venv
 .venv/bin/marimo run lectures/01-learning-from-errors/presentation.py --port 2718
 ```
 
-Open [the deck](http://localhost:2718) in your browser. Each lecture folder contains its slide layout, demo code, presenter notes, and any offline materials.
+Open [the Lecture 01 deck](http://localhost:2718) in your browser. See the [Lecture 02 presenter guide](lectures/02-neural-networks/README.md) to launch the live notebook.
 
 ## Check the lectures
 

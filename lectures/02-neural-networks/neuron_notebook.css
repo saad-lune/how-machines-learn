@@ -1,0 +1,13 @@
+.marimo-cell {
+    --marimo-code-editor-font-size: 1.0625rem;
+}
+
+#App .markdown,
+.app-sidebar .markdown {
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+#App .markdown .paragraph {
+    margin-block: 0.65em;
+}
